@@ -13,7 +13,6 @@
     <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css">
-    <link rel="stylesheet" href="css/app.css">
 
   </head>
 
@@ -22,14 +21,14 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="#">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li class="active"><a href="data-and-results.html">Data and Results</a></li>
           <li><a href="people.html">People</a></li>
         </ul>
         <h3 class="text-muted">CS 109 Project</h3>
       </div>
 
-      <div id="map-container" class="full-height"></div>
+      <div id="map" style="width: 700px; height: 400px"></div>
 
       <div class="row marketing">
         <div class="col-md-6">
@@ -60,10 +59,94 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-    <script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+      var map = L.map('map').setView([42, -70], 5);
+
+      var colors = {
+        'Evasive Maneuvers': '#1b9e77',
+        'Loss of Stability': '#d95f02',
+        'Flooding': '#d95f02',
+        'Fouling': '#1b9e77',
+        'Damage to the Environment': '#66a61e',
+        'Vessel Maneuverability': '#1b9e77',
+        'Material Failure (Vessels)': '#1b9e77',
+        'Grounding': '#7570b3',
+        'Sinking': '#d95f02',
+        'Material Failure (Non-vessels)': '#d95f02',
+        'Allision': '#7570b3',
+        'Fire': '#d95f02',
+        'Loss of Electrical Power': '#1b9e77',
+        'Collision': '#7570b3',
+        'Set Adrift': '#1b9e77',
+        'Emergency Response': '#1b9e77',
+        'Explosion': '#d95f02',
+        'Capsize': '#d95f02',
+        'Abandonment': '#1b9e77',
+        'Damage to Cargo': '#d95f02',
+        'Blowout': '#d95f02',
+        'Implosion': '#d95f02',
+        'Personnel Casualties': '#e7298a',
+        'Material Failure (Diving)': '#1b9e77',
+        'UNSPECIFIED': '#1b9e77'
+      };
+
+      L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
+        key: 'BC9A493B41014CAABB98F0471D759707'
+      }).addTo(map);
+
+      function createTable(feature) {
+        var table = '<table class="table table-condensed table-striped">';
+
+        h = feature.properties;
+        for (var k in h) {
+          // use hasOwnProperty to filter out keys from the Object.prototype
+          if (h.hasOwnProperty(k)) {
+              table += '<tr><td><b>' + k + '</b></td><td>' + h[k] + '</td></tr>';
+          }
+        }
+
+        table += '</table>';
+        return table;
+      }
+
+      function onEachFeature(feature, layer) {
+        var popupContent = "<p><b>name</b> " + feature.properties.name + "</p>";
+
+        if (feature.properties && feature.properties.popupContent) {
+          popupContent += feature.properties.popupContent;
+        }
+
+        layer.bindPopup(createTable(feature));
+      }
+
+      L.geoJson([incidents], {
+
+        style: function (feature) {
+          return feature.properties && feature.properties.style;
+        },
+
+        onEachFeature: onEachFeature,
+
+        pointToLayer: function (feature, latlng) {
+
+          return L.circleMarker(latlng, {
+            radius: 5,
+            fillColor: colors[feature.properties.event_type],
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.5
+          });
+        }
+      }).addTo(map);
+
+
+    </script>
   </body>
 </html>
