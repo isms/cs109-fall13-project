@@ -31,20 +31,22 @@
       <div id="map" style="width: 700px; height: 400px"></div>
 
       <div class="row marketing">
-        <div class="col-md-6">
-          <h4>About</h4>
-          <p>This is the write-up for a Fall 2013 final project in <a href="http://www.cs109.org">CS 109</a> (Data Science) at <a href="http://seas.harvard.edu">Harvard University</a>.</p>
-
-          <p>We examine where and when marine incidents happen on the east coast of the United States. We focus on:</p>
-          <ol>
-            <li><b>Visualization</b> using tools such as GIS and Python's <a href="http://matplotlib.org/basemap/"><code>basemap</code></a> package.</li>
-            <li><b>Prediction</b> using Poisson regression and machine learning algorithms.</li>
-          </ol>
-        </div>
 
         <div class="col-md-6">
           <h4>Data</h4>
-          <p>We use data about marine incidents from the <a href="http://www.uscg.mil/">United States Coast Guard</a>. You can find out more about this data set <a href="data.html">here</a>.</p>
+
+          <p>We use data about marine incidents from the <a href="http://www.uscg.mil/">United States Coast Guard</a>, which included both records of actual incidents from the Coast Guard's <a href="http://en.wikipedia.org/wiki/MISLE">MISLE database</a> as well as calls to the <a href="http://www.nrc.uscg.mil/">National Response Center</a> (NRC). This data set is available <a href="http://www.nrc.uscg.mil/download.html">here</a>. This is a rich data set which displays seasonal trends, correlations with weather, and other interesting features. You can see an excerpt of the data in the figure above, which plots incidents from 2009 through 2012.</p>
+
+          <h4>Methods and results</h4>
+
+          <p>In our project, we used predictive methods like Poisson Regression.</p>
+
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+
+          <h4>Conclusion</h4>
+
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+
         </div>
       </div>
 
@@ -65,7 +67,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     <script src="js/data.js"></script>
     <script>
-      var map = L.map('map').setView([42, -105], 4);
+      var map = L.map('map').setView([42, -95], 4);
 
       var colors = {
         'Evasive Maneuvers': '#1b9e77',
