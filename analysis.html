@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
+
+    <title>CS 109 Final Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/yeti/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      blockquote p.hero {
+        font-size: 28px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="analysis.html">Analysis</a></li>
+          <li><a href="data-and-results.html">Data and Results</a></li>
+          <li><a href="http://nbviewer.ipython.org/github/isms/cs109-fall13-project/blob/master/notebooks/Project%20Notebook.ipynb" target="_blank">Code</a></li>
+        </ul>
+        <h3 class="text-muted">CS 109 Project</h3>
+      </div>
+
+      <div class="container">
+        <h2>Predicting Where Voyages Go Wrong</h2>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-md-12">
+          <h2>Incidents</h2>
+          <p>This is the write-up for a Fall 2013 final project in <a href="http://www.cs109.org">CS 109</a> (Data Science) at <a href="http://seas.harvard.edu">Harvard University</a>.</p>
+        </div>
+
+        <div class="col-md-12">
+          <img class="pull-right" src="img/nounproj/icon_4691.png" width="100px" />
+          <h2>Injuries</h2>
+          <p>This is the write-up for a Fall 2013 final project in <a href="http://www.cs109.org">CS 109</a> (Data Science) at <a href="http://seas.harvard.edu">Harvard University</a>.</p>
+        </div>
+
+        <div class="col-md-12">
+          <h2>Pollution</h2>
+          <img class="pull-right" src="img/nounproj/icon_9273.png" width="100px" />
+          <p>
+            The oceans and waterways are so vast that until recently, humans assumed that no matter how much trash and chemicals we dump into them, the impact would be negligible.
+            Whilst most of this pollution is caused by land based run-offs, ships and offshore platforms are also a significant contributor.
+          </p>
+          <p>
+            In our analysis, we studied what contaminants most commonly end up in the oceans and what types of vessels are most responsible.
+          </p>
+
+          <h4>Liquid pollution</h4>
+
+          <p>
+            In our dataset, there were 17,289 pollution incidents involving liquids.
+            The majority of these liquid pollutants were <a data-toggle="tooltip" title="Hydraulic, lubricating, crude, and so on">oils</a>, gasoline, calcium chloride, and asphalt.
+
+            <center>
+              <img class="" src="img/liquid_pollution.png" />
+            </center>
+          </p>
+
+            <blockquote>
+              <p>What we found was shocking:</p>
+              <p class="hero"><s>Smerity didn't label the x axis</s></p>
+              <p class="hero">Only 100 of those 17,289 incidents were responsible for over 90% of the pollution.</p>
+            </blockquote>
+
+          <p>
+            The average incident only resulted in a loss of <b>REPLACE</b> gallons of pollutant, yet the top 100 incidents resulted in an average loss of <b>REPLACE</b> gallons of pollutant.
+            Even if we were able to prevent the majority of less severe incidents, the overall liquid pollutant lost would be minimally impact.
+          </p>
+
+          </p>
+
+          <h4>Solid pollution</h4>
+
+        </div>
+
+      <div class="footer">
+        <p>C. Hornbaker, S. Merity, I. Slavitt, 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
