@@ -50,6 +50,19 @@
         <h2>Predicting Where Voyages Go Wrong</h2>
       </div>
 
+      <p>
+        The majority of marine incidents are attributed to human error.
+        Whilst this is indeed correct, the environmental conditions and the condition of the vehicle can strongly influence the likelihood and severity of the incident.
+        To be able to predict, and hopefully prevent, these types of incidents, we need to have a deep understanding of the context in which these accidents occur.
+
+        <center>
+          <img class="" src="img/reported_incidents_by_hour_and_type.png" />
+        </center>
+
+        Note that fishing vessels, passenger ships and towing vessels (likely servicing the previous two) experience diurnality, or more activity during the day than the night.
+        Barge vessels are less diurnal, primarily as they interact less with people and remain out on the water for longer periods of time.
+      </p>
+
       <div class="row marketing">
         <div class="col-md-12">
           <h2>Incidents</h2>
@@ -73,6 +86,15 @@
             In our analysis, we studied what contaminants most commonly end up in the oceans and what types of vessels are most responsible.
           </p>
 
+          <p>
+            In our dataset, we have 16,589 incidents in which pollution was spilled into a body of water.
+            If we look at the reported incidents by vessel type, it appears initially as though Recreational boats are the major concern.
+
+            <center>
+              <img class="" src="img/total_pollution_incidents.png" />
+            </center>
+          </p>
+
           <h4>Liquid pollution</h4>
 
           <p>
@@ -86,18 +108,32 @@
 
             <blockquote>
               <p>What we found was shocking:</p>
-              <p class="hero"><s>Smerity didn't label the x axis</s></p>
-              <p class="hero">Only 100 of those 17,289 incidents were responsible for over 90% of the pollution.</p>
+              <p class="hero">Just 100 of those 16,780 incidents were responsible for over 90% of the pollution.</p>
             </blockquote>
 
           <p>
-            The average incident only resulted in a loss of <b>REPLACE</b> gallons of pollutant, yet the top 100 incidents resulted in an average loss of <b>REPLACE</b> gallons of pollutant.
+            <center>
+              <img class="" src="img/liquid_pollution_distribution.png" />
+            </center>
+
+            The average incident only resulted in a loss of <b>95.1</b> gallons of pollutant, yet the top 100 incidents resulted in an average loss of <b>12,033.0</b> gallons of pollutant.
             Even if we were able to prevent the majority of less severe incidents, the overall liquid pollutant lost would be minimally impact.
           </p>
 
           </p>
 
           <h4>Solid pollution</h4>
+
+          <p>
+            There are far less incidents involving solid pollutants compared to liquid pollutants.
+            In this case, just two incidents are responsible for over 95% of the pollution.
+          </p>
+          <p>
+            The majority of this was a single incident, when the barge NMS-1477, loaded with 197,000 gallons of concentrated (97%) sulfuric acid (H2SO4), <a href="http://incidentnews.noaa.gov/entry/6227">capsized in a Texan port</a>.
+            <center>
+              <img class="" src="img/solid_pollution.png" />
+            </center>
+          </p>
 
         </div>
 
