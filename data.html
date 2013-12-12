@@ -23,7 +23,7 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="index.html">Home</a></li>
           <li><a href="analysis.html">Analysis</a></li>
-          <li class="active"><a href="data-and-results.html">Data and Results</a></li>
+          <li class="active"><a href="data.html">Data</a></li>
           <li><a href="http://nbviewer.ipython.org/github/isms/cs109-fall13-project/blob/master/notebooks/Project%20Notebook.ipynb" target="_blank">Code</a></li>
         </ul>
         <h3 class="text-muted">CS 109 Project</h3>
@@ -38,20 +38,48 @@
 
       <div class="row marketing">
 
-        <div class="col-md-12">
+        <div class="col-md-6">
           <h4>Data</h4>
 
-          <p>We use data about marine incidents from the <a href="http://www.uscg.mil/">United States Coast Guard</a>, which included both records of actual incidents from the Coast Guard's <a href="http://en.wikipedia.org/wiki/MISLE">MISLE database</a> as well as calls to the <a href="http://www.nrc.uscg.mil/">National Response Center</a> (NRC). This data set is available <a href="http://www.nrc.uscg.mil/download.html">here</a>. This is a rich data set which displays seasonal trends, correlations with weather, and other interesting features. You can see an excerpt of the data in the figure above, which plots incidents from 2009 through 2012.</p>
+          <p>We use data about marine incidents from the <a href="http://www.uscg.mil/">United States Coast Guard</a>, which included both records of actual incidents from the Coast Guard's <a href="http://en.wikipedia.org/wiki/MISLE">MISLE database</a> as well as calls to the <a href="http://www.nrc.uscg.mil/">National Response Center</a> (NRC) &mdash; available <a href="http://www.nrc.uscg.mil/download.html">here</a>. This is a rich data set which displays seasonal trends, correlations with weather, and other interesting features. You can see an excerpt of the data in the figure above, which plots incidents from 2009 through 2012.</p>
 
-          <h4>Methods and results</h4>
+        </div>
 
-          <p>In our project, we used predictive methods like Poisson Regression.</p>
+        <div class="col-md-6">
+          <h4>Legend</h4>
 
-          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+          <table class="table table-condensed table-striped">
+            <thead>
+              <tr>
+                <td>Color</td>
+                <td>Categories</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="width:100%;height:20px;border:1px solid #000;opacity:0.5;background-color:#7570b3;" /></td>
+                <td>Collisions, allisions, groundings</td>
+              </tr>
+              <tr>
+                <td><div style="width:100%;height:20px;border:1px solid #000;opacity:0.5;background-color:#e7298a;" /></td>
+                <td>Personnel casualties</td>
+              </tr>
+              <tr>
+                <td><div style="width:100%;height:20px;border:1px solid #000;opacity:0.5;background-color:#66a61e;" /></td>
+                <td>Damage to the environment</td>
+              </tr>
+              <tr>
+                <td><div style="width:100%;height:20px;border:1px solid #000;opacity:0.5;background-color:#d95f02;" /></td>
+                <td>Shipboard safety and machinery casualties</td>
+              </tr>
+              <tr>
+                <td><div style="width:100%;height:20px;border:1px solid #000;opacity:0.5;background-color:#1b9e77;" /></td>
+                <td>General</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <h4>Conclusion</h4>
-
-          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
 
         </div>
       </div>
