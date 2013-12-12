@@ -99,6 +99,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/heatcanvas.js"></script>
+    <script type="text/javascript" src="js/heatcanvas-leaflet.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/data.js"></script>
     <script>
       var map = L.map('map').setView([38, -96], 3);
@@ -161,7 +164,18 @@
         layer.bindPopup(createTable(feature));
       }
 
-      L.geoJson([incidents], {
+      var heatmap = new L.TileLayer.HeatCanvas({}, {
+        'step':0.5,
+        'degree': HeatCanvas.LINEAR,
+        'opacity':0.7
+      });
+
+      // populate heatmap
+      for(var i=0,l=incidents['features'].length; i<l; i++) {
+          heatmap.pushData(incidents['features'][i]['geometry']['coordinates'][1], incidents['features'][i]['geometry']['coordinates'][0], 1);
+      }
+
+      var incidentLayer = L.geoJson([incidents], {
 
         style: function (feature) {
           return feature.properties && feature.properties.style;
@@ -180,8 +194,15 @@
             fillOpacity: 0.5
           });
         }
-      }).addTo(map);
+      })
 
+      map.addLayer(heatmap);
+      map.addLayer(incidentLayer);
+
+      L.control.layers({
+        'heatmap': heatmap,
+        'markers': incidentLayer
+      }).addTo(map);
 
     </script>
   </body>
